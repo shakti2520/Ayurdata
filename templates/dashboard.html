@@ -1,0 +1,333 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+<!--  bootstrap links      -->
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/css/star-rating.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/js/star-rating.min.js"></script>
+        
+        <script src="https://use.fontawesome.com/612cd5b0c6.js"></script>
+        
+<!--   script for menu bar in moblie screen     -->
+        <script src="{{ url_for('static', filename = 'js/sidebar.js') }}"></script>
+<!--   css of font awesome     -->
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/all.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/fontawesome.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'js/solid.js') }}">
+<!--   css for navigation bar and sidebar     -->
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/nav.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/croplist.css') }}">
+<!--   script for rating system in bootstrap     -->
+        <script>
+            $(document).ready(function(){
+                $("#rating").rating();
+                
+                $("#sub-feedback").click(function(){
+                    $.ajax({
+                        type:"POST",
+                        url: '/feedback',
+                        data: $("#feedback").serialize(),
+                        success: function(){
+                            
+                        }
+                        
+                    });
+                });
+                
+            });
+            
+        </script>
+        
+    </head>
+    
+    <body>
+<!--  top header start  -->
+        <header style="position: fixed">
+            
+            <div id="name"><img src="{{url_for('static', filename='images/ayurdata.png')}}" height="100%"></div>
+            <div class="navbar-collapse-btn">
+                <a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
+            </div>
+            <div class="dropdown" id="btn-user">
+              <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 {{ session['username'] }}
+              </button>
+              <div class="dropdown-menu dropdown-menu-right m-0" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="/logout">Log Out</a>
+              </div>
+            </div>
+            {% if session['user_type']=='f' %}
+            
+            <div class="dropdown" id="btn-user">
+              <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Post
+              </button>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton" style="width: 400px; background-color: rgba(74, 101, 114, 0.94)">
+                    <form action="/post" method="post">
+       
+                    
+                    <div class="form-group">
+                        <label for="">Plant Name</label>
+                        <input type="text" class="form-control" name="name" >
+                    </div>
+                     <div class="form-group">
+                        <label for="">Quantity Available</label>
+                        <input type="text" class="form-control" name="quantity" >
+                    </div>
+                     <div class="form-group">
+                        <label for="">Photo Upload</label>
+                        <input type="file" class="form-control-file" name="file" >
+                    </div>
+                    
+                    <div class="form-group ">
+                        <input class="btn btn-warning" type="submit" value="POST" style="width: 30%;">
+                    </div>
+                </form>
+              </div>
+            </div>
+            
+            {% endif %}
+            {% if session['user_type']=='c' %}
+            
+            <div class="dropdown" id="btn-user">
+              <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Request
+              </button>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton" style="width: 400px; background-color: rgba(74, 101, 114, 0.94)">
+                    <form action="/request" method="post" class="m-0 p-4">
+                        <div class="form-group ">
+                            <label for="">Plant to be Requested</label>
+                            <input type="text" class="form-control" name="name" >
+                        </div>
+                        <div class="form-group ">
+                            <label for="">Quantity Required</label>
+                            <input type="text" class="form-control" name="regno" >
+                        </div>
+                        <input class="btn btn-warning" type="submit" value="Request" style="width: 30%; margin-left: 15px;">
+                    </form>  
+              </div>
+            </div>
+            
+            <div class="dropdown" id="btn-user">
+              <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Order
+              </button>
+              <div class="dropdown-menu dropdown-menu-right m-0" aria-labelledby="dropdownMenuButton"  style="width: 400px; background-color: rgba(74, 101, 114, 0.94)">
+                    <form action="/order" method="post" class="m-0 p-4">
+       
+                        <div class="form-group">
+                            <label for="">Plant name</label><br>
+                            <select name="plant" style="width: 100%; height: 30px;">
+                                {% for i in range(plants|length) %}
+                                    <option value="{{plants[i][0]}}">{{plants[i][1]}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Quantity</label>
+                            <input type="text" class="form-control" name="quantity" style=" margin-left: 2px;  ">
+                        </div>
+
+                        <div class="form-group ">
+                            <input class="btn btn-warning" type="submit" value="Post" style="width: 40%;">
+                        </div>
+                    </form>
+              </div>
+            </div>
+            {% endif %}
+        </header>
+<!--   top header end     -->
+        
+<!--   sidenav start     -->
+        <aside class="sidenav">
+            <a href="/dashboard">Home</a>
+            <a href="#">Forums</a>
+            <a href="#">Statistics</a>
+            <a href="#">Order</a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <div class="bottom-bar">
+                <div class="feedback">
+                    <a href="#"> <i class="far fa-envelope"></i></a><!-- feedback icon-->
+                </div>
+                <div class="setting">
+                    <a href="#"> <i class="fas fa-user-cog"></i></a><!-- user account setting icon-->
+                </div>
+            </div>
+        </aside> 
+<!--   sidenav end     -->
+        
+<!--   ###############################################################     
+        {% if session['user_type']=='c' %}
+        <div class=" col-4" style="float: left">
+
+        <ul class="nav nav-tabs ml-auto" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#freg" role="tab" aria-controls="freg" aria-selected="true">Order</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="home-tab" data-toggle="tab" href="#creg" role="tab" aria-controls="creg" aria-selected="false">Request</a>
+          </li>
+        </ul>
+       <div class="tab-content" id="myTabContent" style="margin: 0; padding: 0;">
+            <div class="tab-pane fade " id="creg" role="tabpanel" aria-labelledby="creg">
+           
+                
+           
+            </div>
+           
+           
+            <div class="tab-pane fade show active" id="freg" role="tabpanel" aria-labelledby="freg">
+           
+                
+           
+            </div>
+           
+        </div>
+       
+       
+        
+        </div>
+        {% endif %}
+<!--   ###############################################################     -->
+        
+<!--   ###############################################################     
+        {% if session['user_type'] == 'f' %}
+
+       <div class=" col-4" style="float: left">
+        
+        <ul class="nav nav-tabs ml-auto" id="myTab" role="tablist">
+          
+          <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#freg" role="tab" aria-controls="freg" aria-selected="false">Post</a>
+          </li>
+        </ul>
+       
+        <div class="tab-content" id="myTabContent" style="float: ">
+            
+            </div>
+        </div>
+
+        {% endif %}
+        
+<!--   ###############################################################     -->
+        
+        
+       
+{% if session['user_type'] == 'c' %}
+        <div class="crops-container">
+            <div class="crop-container-title col-12">Recent Posts</div>
+            {% set len = plants|length %}
+        {% for i in range(plants|length) %}
+            {% if i<=4 %}
+            <div class="card">
+            <img alt="crop image" class="card-img-top" src="{{ url_for('static', filename = 'images/'+plants[len-(i+1)][3]) }}">
+            
+                <div class="card-body">
+                    <h5 class="card-title">Name : {{plants[len-(i+1)][1]}}</h5>
+                    <p>Rate : {{plants[len-(i+1)][2]}} Rs/Kg</p>
+                </div>
+            </div>
+            {% endif %}
+           {% endfor %}
+        </div>
+{% endif %}
+       
+<!--   #####################################################################################     -->
+        {% if session['user_type'] == 'c' %}
+        <div class="crops-container"><!--  second container of Top Rated entries  -->
+            <div class="crop-container-title col-12">Suggested</div>
+            {% for i in range(plants|length) %}
+                {% if i<=4 %}
+                    <div class="card">
+                        <img alt="crop image" class="card-img-top" src="{{ url_for('static', filename = 'images/'+plants[i][3]) }}">
+
+                        <div class="card-body">
+                            <h5 class="card-title">Name : {{plants[i][1]}}</h5>
+                            <p>Rate : {{plants[i][2]}} Rs/Kg</p>
+    <!--                        <p class="card-text">Quantity : {{plants[i][3]}} Ton</p>-->
+    <!--                        <button class="btn btn-success"> Accept order </button>-->
+                        </div>
+                {% endif %}
+                </div>
+            
+            {% endfor %}
+            </div>
+        {% endif %}
+        <!--   #####################################################################################     -->
+        {% if session['user_type'] == 'f' %}
+        <div class="crops-container">
+            <div class="crop-container-title col-12">Orders</div>
+<!--            {{o_plants}}-->
+            {% for i in range(o_plants|length) %}
+                    <div class="card">
+                        <img alt="crop image" class="card-img-top" src="{{ url_for('static', filename = 'images/'+o_plants[i][4]) }}">
+
+                        <div class="card-body">
+                            <h5 class="card-title">Name : {{o_plants[i][1]}}</h5>
+                            <p>Date ordered : {{o_plants[i][2]}}</p>
+                            <p class="card-text">Quantity : {{o_plants[i][3]}} Kg</p>
+                            <button class="btn btn-success"> Accept order </button>
+                        </div>
+                    </div>
+            {% endfor %}
+            </div>
+        {% endif %}
+        <!--   #####################################################################################     -->
+        {% if session['user_type'] == 'f' %}
+        <div class="crops-container">
+            <div class="crop-container-title col-12">Requested</div>
+            {% for i in range(r_plants|length) %}
+                    <div class="card">
+                        <img alt="crop image" class="card-img-top" src="{{ url_for('static', filename = 'images/'+r_plants[i][3]) }}">
+
+                        <div class="card-body">
+                            <h5 class="card-title">Name : {{r_plants[i][1]}}</h5>
+                            <p class="card-text">Quantity : {{r_plants[i][2]}} Kg</p>
+                            <button class="btn btn-success"> Accept Request </button>
+                        </div>
+                    </div>
+            {% endfor %}
+            </div>
+        {% endif %}
+        <!--   #####################################################################################     -->
+        
+
+        <div class="" style="width: 70%;">
+        
+            
+            <form id="feedback" class="feedback">
+                <div class="feedback-head">Feedback Form</div>
+                <div class="feedback-desc">We woold love to hear your thougts, concerns or problems with anything so we can inprove!</div>
+                
+                <div class="form-group">
+                    <label for="orderid">Order Id</label>
+                    <input type="text" class="form-control" name="orderid" id="orderid">
+                </div>
+                <div class="container">
+                    <label for="rating" class="control-label">Rate our service:</label>
+                    <input id="rating" name="rating" class="rating rating-loading" value="0" data-min="0" data-max="5" data-step="1" data-size="xs">
+                </div>
+                <div class="form-group">
+                    <label for="message">Feedback</label>
+                    <input type="text" class="form-control" name="message" id="message">
+                </div>
+                
+                <input type="button" class="btn btn-warning" value="Submit" id="sub-feedback">
+            </form>
+            
+        </div>
+        
+    </body>
+    
+</html>

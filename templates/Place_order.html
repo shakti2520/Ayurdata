@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta charset="UTF-8"> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!--        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+<!--        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <!-- to style the top navigation bar and the side menu -->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <!--  javascript for toggling sidebar from top when in mobile mode  -->
+        <script src="sidebar.js"></script>
+        
+
+    </head>
+    <body>
+        <!-- Navigation bar start -->
+        <!-- this part will be same in every page in the dashboard -->
+         <!--  Left bar start  -->
+   
+         <header class="header">
+                <nav class="navbar navbar-expand-md bg-light navbar-light fixed-top">
+                        <!-- Toggler/collapsibe Button -->
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
+                      
+                        <!-- Navbar links -->
+                        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                          <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                    <a href="index" class="nav-link">Company Details</a>
+                            </li>
+                            <li class="nav-item">
+                                    <a href="Place_order" class="nav-link active">Place Orders</a>
+                            </li>
+                            <li class="nav-item">
+                                    <a href="Previous_orders" class="nav-link">Previous Order</a>
+                            </li>
+                            <li class="nav-item">
+                                    <a href="contact enquiry" class="nav-link">Contact Us</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </nav>
+            
+        <div class="shopping-header-company">
+            <div class="inside-header text-center">
+            <h1 class="display-4 header-heading">Get Your All Favourite Plants at one Place</h1>
+            <p class="header-para">Get Your Favourite Item Now</p>
+        </div>
+        </div>
+        </header>
+        <!--  Left bar end -->
+        <!--  Top bar start  -->
+    
+                
+        <!--  Top bar end -->
+
+            <!-- navigation bars end  -->
+<div class="jumbotron text-center">
+    <h1 class="display-4 text-center jumb-place-heading jumb-heading">What We Provide ?</h1>
+    <hr class="line" style="border:2px solid rgb(0, 106, 57)">
+    <i class="fa fa-leaf leaf-icon"></i>
+    <p class="place-order-para">We provides many plants that you like, we know your needs and provides many beautiful plants as per your needs.</p>
+</div>
+<!------------------------------End Section---------------->
+
+                <div class="company-details container-fluid">
+                    <div class="place-order-section">
+                    <h4 class="display-4 text-center place-order-heading" style="color:white;padding-top:2rem">Place Order</h4>
+                    <hr class="line" style="border:3px solid white">
+                    
+                    <form class="form-group col-lg-12 order-form" method="post" action="">
+                        <div class="row" id="input-field-1">
+                            <div class="form-group col-lg-6 ">
+                                <label for="plant1" class="place-order-label">Plant</label>
+                                <select class="form-control" name="plant1" id="plant1">
+                                    <option value="a1">Aloe Vera</option>
+                                    <option value="a2">Amla</option>
+                                    <option value="a3">Geloy</option>
+                                    <option value="a4">Neem</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label for="weight1" class="place-order-label">Weight</label>
+                                <input type="number" id="weight1" name="weight1" class="form-control" placeholder="In tonne"/>
+                            </div>
+                        </div>
+                        <div class="row bg-transparent border-0 text-center" >
+                            <div class="col-lg-6 text-center add-more" >
+                                <input type="button" class="form-control  " id="add-more" value="Add more" />
+                                </div>
+                                <div class="col-lg-6 text-center remove-previous">
+                                    <input type="button" class="form-control" id="remove-previous" value="Remove Previous"/>
+                                    </div>
+                               
+                            <div class="container text-center">
+                                    <br>
+                                <input type="submit" class="form-control place-order-btn" value="Place Order" ></div>
+                        </div>
+                    </form>
+                    </div>
+                    <!--  Script to add and remove button  -->
+                    <script>
+
+                        $(document).ready(function(){
+
+                            $("#add-more").click(function(){
+                                // get the last DIV which ID starts with ^= "div"
+                                var div = $('div[id^="input-field-"]:last');
+                                var num = parseInt( div.prop("id").match(/\d+/g), 10 ) +1;
+                                var clonediv=div.clone().prop("id","input-field-"+num);
+                                div.after(clonediv);
+                                $("#input-field-"+num+" select").attr("name","plant"+num);
+                                $("#input-field-"+num+" select").attr("id","plant"+num);
+                                $("#input-field-"+num+" label:first-child").attr("for","plant"+num);
+                                
+                                $("#input-field-"+num+" input").attr("name","weight"+num);
+                                $("#input-field-"+num+" input").attr("id","weight"+num);
+                                $("#input-field-"+num+" label:last-child").attr("for","weight"+num);
+                                // alert(num);
+                                
+                            });
+                             $("#remove-previous").click(function(){
+                                // get the last DIV which ID starts with ^= "div"
+                                var div = $('div[id^="input-field-"]:last');
+                                var num = parseInt( div.prop("id").match(/\d+/g), 10 );
+                                
+                                if(num===1)//check if the block is the last block
+                                {
+                                    alert("The last block can not be removed");
+                                }
+                                else//if it is not last, then it will be removed
+                                {
+                                    div.remove();
+                                }
+                                
+                             });
+                        });
+
+                    </script>
+                    
+                </div>
+    
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>

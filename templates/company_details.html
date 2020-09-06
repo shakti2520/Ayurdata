@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<header class="header">
+        <nav class="navbar navbar-expand-md bg-light navbar-light fixed-top">
+                <!-- Toggler/collapsibe Button -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <!-- Navbar links -->
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                            <a href="index" class="nav-link active">Company Details</a>
+                    </li>
+                    <li class="nav-item">
+                            <a href="Place_order" class="nav-link">Place Orders</a>
+                    </li>
+                    <li class="nav-item">
+                            <a href="Previous_orders.html" class="nav-link">Previous Order</a>
+                    </li>
+                    <li class="nav-item">
+                            <a href="contact enquiry.html" class="nav-link">Contact Us</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+    
+<div class="header-company">
+    <div class="inside-header text-center">
+    <h1 class="display-3 header-heading">Want to Know about Us</h1>
+    <p class="header-para">Get Your Favourite Item Now</p>
+    <input type="button" value="Place Your Order" class="btn btn-primary order-btn btn-lg">
+</div>
+</div>
+</header>
+<!----------------------------Jumbotron--------------->
+<div class="jumbotron text-center">
+    <h2 class="display-4 jumb-heading">About Us</h2>
+    <hr class="line" style="border:2px solid rgb(0, 106, 57); width: 10%;">
+    <p class="jumb-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vitae perspiciatis dolorem optio aliquam facilis! Ipsum, dolorem perferendis tempora doloribus ab corrupti omnis pariatur nisi consectetur, quidem eligendi facilis modi.</p>
+</div>
+<div class="details-section">
+    
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 left-col">
+            <div class="close-section text-center">
+            <h2 class="company-details-heading">Company Details</h2>
+            <hr class="line">
+            <p class="details-para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis doloribus magnam, odio, aliquam quae vel molestias corrupti iusto provident rerum iure! Ratione cumque culpa soluta mollitia, qui minima vel ullam?</p>
+            <hr class="line">
+           
+            <lable class="label">Name Of Company:&nbsp&nbsp<span class="inside-label"> AyurData Pvt ltd</span></lable>
+            <lable class="label">Email: &nbsp&nbsp<span class="inside-label"> ayurdata@gmail.com</span></lable><br>
+            <lable class="label">Address: &nbsp&nbsp<span class="inside-label"> lorem ipsum dummy text</span></lable><br>
+            <lable class="label">City: &nbsp&nbsp<span class="inside-label"> Vadodara</span></lable><br>
+            <lable class="label">State: &nbsp&nbsp<span class="inside-label">  Gujrat</span></lable><br>
+            <lable class="label">Pin: &nbsp&nbsp<span class="inside-label"> 3600002</span></lable><br>
+            <lable class="label">Contact No.: &nbsp&nbsp<span class="inside-label"> 1234567890</span></lable><br>
+            <lable class="label">Landmark: &nbsp&nbsp<span class="inside-label"> lorem ipsum dummy text</span></lable>
+           <br>
+           <br>
+        
+        </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 right-col">
+            <div class="close-section text-center">
+            <h2 class="acc-heading ">Accounts Details</h2>
+            <hr class="line">
+            <p class="details-para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis doloribus magnam, odio, aliquam quae vel molestias corrupti iusto provident rerum iure! Ratione cumque culpa soluta mollitia, qui minima vel ullam?</p>
+            <hr class="line">
+            <lable class="label">Bank Name: &nbsp&nbsp<span class="inside-label"> XYZ Bank Ltd</span></lable>
+            <lable class="label">Account Number &nbsp&nbsp<span class="inside-label"> 1234567890</span></lable><br>
+            <lable class="label">IFSC code: &nbsp&nbsp<span class="inside-label"> XYZ123SD</span></lable><br>
+        </div>
+        </div>
+    
+    </div>
+</div>
+
+
+
+
+    <!------------Bootstrap JS Code-------->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

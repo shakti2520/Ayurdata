@@ -1,0 +1,204 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--  bootstrap links      -->
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/css/star-rating.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/js/star-rating.min.js"></script>
+        
+        <script src="https://use.fontawesome.com/612cd5b0c6.js"></script>
+        
+<!--   script for menu bar in moblie screen     -->
+        <script src="{{ url_for('static', filename = 'js/sidebar.js') }}"></script>
+<!--   css of font awesome     -->
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/all.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/fontawesome.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'js/solid.js') }}">
+        <style>
+            body{
+            background: url(../static/images/login.jpg);
+            background-repeat: no-repeat;
+            height: 100%;
+            width: 100%;
+            background-size: auto;
+        }
+            form{
+                background-color: rgba(74, 101, 114, 0.94);
+                padding: 20px;
+                padding-bottom: 30px;
+                color: black;
+            }
+            label{
+                color: #f9aa33;
+                font-size: 14px;
+            }
+            .form-control
+            {
+                margin: auto;
+                height: 30px;
+                border-radius: 5px;
+            }
+            .nac-link{
+                
+            }
+            .con{
+                     margin-top: 150px;
+                
+                }
+            
+        
+           
+            
+        </style>
+    </head>
+    
+    <body>
+        <div class="container-fluid row">
+            <div class="col-6 logo" >
+                <img id="logo" src = '../static/images/ayurdata.png'>
+            </div>
+            <div class="col-6 con">
+        <!--    For tabs (bootstrap)    -->
+                <ul class="nav nav-tabs col-12 ml-auto" id="myTab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#creg" role="tab" aria-controls="creg" aria-selected="true">Company Regestration</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#freg" role="tab" aria-controls="freg" aria-selected="false">Farmer Regestration</a>
+                  </li>
+                </ul>
+
+                <div class="tab-content col-12 ml-auto" id="myTabContent">
+                    <div class="tab-pane fade show active" id="creg" role="tabpanel" aria-labelledby="creg">
+
+                        <form action="" method="post" >
+
+                            <div class="form-group col-lg-6">
+                                <label for="">Company name</label>
+                                <input type="text" class="form-control" name="name" >
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label for="">Company regestrarion number</label>
+                                <input type="text" class="form-control" name="regno" >
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label for="">Creat password</label>
+                                <input type="password" class="form-control" name="password" >
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label for="">confirm password</label>
+                                <input type="password" class="form-control" name="cpassword" >
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label for="">contact no.</label>
+                                <input type="number" class="form-control" name="contact" >
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label for="">Email id</label>
+                                <input type="email" class="form-control" name="email" >
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label for="">Street</label>
+                                <input type="text" class="form-control" name="street" >
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label for="">City</label>
+                                <input type="text" class="form-control" name="city" >
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label for="">State</label>
+                                <input type="text" class="form-control" name="state" >
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label for="">Pin Code</label>
+                                <input type="number" class="form-control" name="pin" >
+                            </div>
+
+                            <div class="form-group col-lg-6">
+                                <label for="">Country</label>
+                                <input type="text" class="form-control" name="country" >
+                            </div>
+                            <input type="hidden" value="c" name="user">
+                            <input class=" btn btn-warning col-10" style="margin-left: 8%;" type="submit" value="Register">
+                        </form>
+
+                    </div>
+
+
+                    <div class="tab-pane fade" id="freg" role="tabpanel" aria-labelledby="freg">
+
+                        <form action="" method="post">
+
+                            <div class="form-group col-lg-6">
+                                <label for="">Farmer name</label>
+                                <input type="text" class="form-control" name="name" >
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label for="">Create ID</label>
+                                <input type="text" class="form-control" name="fid" >
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label for="">Creat password</label>
+                                <input type="password" class="form-control" name="password" >
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label for="">confirm password</label>
+                                <input type="password" class="form-control" name="cpassword" >
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label for="">contact no.</label>
+                                <input type="number" class="form-control" name="contact" >
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label for="">Date of Birth</label>
+                                <input type="date" class="form-control" name="dob" >
+                            </div>
+<!--
+                            <div class="form-group col-lg-6">
+                                <label for="">Email id</label>
+                                <input type="email" class="form-control" name="email" >
+                            </div>
+-->
+                            <div class="form-group col-lg-6">
+                                <label for="">Street</label>
+                                <input type="text" class="form-control" name="street" >
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label for="">City</label>
+                                <input type="text" class="form-control" name="city" >
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label for="">State</label>
+                                <input type="text" class="form-control" name="state" >
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label for="">Country</label>
+                                <input type="text" class="form-control" name="country" >
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label for="">PIN</label>
+                                <input type="number" class="form-control" name="pin" >
+                            </div>
+                            <input type="hidden" value="f" name="user">
+                            <input class=" btn btn-warning col-10" style="margin-left: 8%;" type="submit" value="Register">
+                        </form>
+
+                    </div>
+
+                </div>
+             </div>
+       </div> 
+    </body>
+    
+</html>
