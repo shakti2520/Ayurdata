@@ -1,0 +1,365 @@
+*
+{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav-link
+{
+    padding: 20px;
+    color:#006A39 !important;
+    font-size: 1rem;
+    margin-right: 1.6rem;
+    
+}
+
+.nav-link:hover
+{
+    color:#038CD1;
+    border-bottom: 3px solid #37383C;
+}
+
+.active
+{
+    color:#038CD1;
+    border-bottom: 3px solid #37383C;
+}
+
+.header-company
+{
+    background-image: url(Company%20Enquiry%20Header.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.inside-header
+{
+    background-color: rgba(0, 106, 57, 0.8);
+    padding-top:14rem;
+    padding-bottom: 4rem;
+}
+
+.header-heading, .header-para, .header-heading-pre-orders
+{
+    padding-top:2rem;
+    color:white;
+    text-transform: uppercase;
+}
+
+
+
+.header-para, .header-para-pre-orders
+{
+    font-size:3rem;
+    color:white;
+    padding-bottom: 4rem;
+}
+
+.header-heading-pre-orders
+{
+    padding-top: 5rem;
+}
+
+.header-para-pre-orders
+{
+    padding-bottom: 7rem;;
+}
+.order-btn
+{
+    padding:10px 20px 10px 20px;
+    background-color:#37383C;
+    border:none;
+}
+
+.order-btn:hover, .reset-btn:hover, .submit-btn:hover
+{
+    background-color: rgb(0, 106, 57);
+    border:1px solid black;
+}
+
+.jumb-heading
+{
+    font-weight: 600;
+}
+
+.jumb-para
+{
+    font-size:1.2rem;
+}
+
+.left-col
+{
+    background-color: rgb(0, 106, 57);
+}
+
+.company-details-heading, .acc-heading, .pre-order-heading
+{
+    color:white;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding-top:3rem;
+}
+.jumbotron
+{
+    background-color: white !important;
+}
+.logo
+{
+    font-size:5rem;
+    color:white !important;
+}
+
+.line
+{
+    border:2px solid white;
+    width: 20%;
+}
+
+.close-section
+{
+    width: 50%;
+    margin: auto;
+}
+
+.details-para
+{
+    color:white;
+    font-weight: 300;
+}
+
+.label
+{
+    color:white;
+    font-weight: bolder;
+}
+
+.inside-label
+{
+    color:rgb(248, 245, 245);
+    font-weight: 300;
+}
+
+.right-col
+{
+    background-color: #37383C;
+}
+
+.down-arrow
+{
+    color:white;
+    font-size:5rem;
+}
+
+.form-section
+{
+    background-color: #37383C;
+}
+
+.form
+{
+    background-color: rgb(0, 106, 57);
+    width:60%;
+    margin:auto;
+    margin-top:5rem;
+    border-radius: 10px;
+    padding:2rem;
+}
+
+.input-form-element, .place-order-label
+{
+    padding-top:10px;
+    color:white;
+}
+
+
+.reset-btn, .submit-btn
+{
+    padding:10px 50px 10px 50px;
+    background-color:#37383C;
+    border:1px solid #37383C;
+}
+
+.contact-header-company
+{
+    background-image: url(Contact-Header.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+.shopping-header-company
+{
+    background-image: url(shopping.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.order-form
+{
+    background-color: rgb(0, 106, 57);
+    max-width: 60%;
+    margin:auto;
+    border-radius: 10px;
+    padding-bottom: 2rem;
+}
+
+.leaf-icon
+{
+    font-size:10rem;
+    color:rgb(0, 106, 57);
+}
+
+.place-order-para
+{
+    font-size:2rem;
+}
+
+
+.company-details
+{
+    background-color: #37383C;
+    padding-bottom: 2rem;;
+}
+
+.add-more, .remove-previous
+{
+    max-width: 40%;
+    margin:auto;
+}
+
+.place-order-btn
+{
+    background-color: #37383C;
+    color:white;
+    border:1px solid #37383C;
+    transition: background-color 1s;
+}
+
+
+.place-order-btn:hover
+{
+    cursor: pointer;
+    background-color: rgb(0, 106, 57);
+}
+
+
+
+.order-section
+{
+    background-color: rgb(0, 106, 57);
+    color:white !important;
+    margin-top:3rem;
+    border-radius: 10px;
+    padding-bottom: 2rem;
+}
+
+td
+{
+    color:black;
+}
+
+.header-company-prev-orders
+{
+    background-image: url(Prev-order.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.jumb-contact-heading
+{
+padding-top:3rem;
+font-size:3.2rem
+}
+
+@media (max-width:767px)
+{
+    .header-heading, .header-heading-pre-orders
+    {
+        font-size: 2.6rem;
+    }
+
+    .header-para, .header-para-pre-orders
+    {
+        font-size:1.6rem;
+    }
+
+    .header-para-pre-orders
+    {
+        padding-bottom: 8rem;
+    }
+
+    .order-btn
+{
+    padding:10px 30px 10px 30px;
+    background-color:#37383C;
+    border:none;
+}
+
+    .jumb-heading, .jumb-heading-prev-orders, 
+    {
+        font-size: 2.8rem;
+    }
+
+    .jumb-para, .place-order-para
+    {
+        font-size:1.2rem;
+    }
+
+    .jumb-place-heading
+    {
+        font-size:2.3rem;
+    }
+
+    .leaf-icon
+{
+    font-size:7rem;
+    color:rgb(0, 106, 57);
+}
+    
+.order-form
+{
+    background-color: rgb(0, 106, 57);
+    max-width: 100%;
+    border-radius: 10px;
+    padding-bottom: 2rem;
+}
+.remove-previous
+{
+    max-width: 50%;
+    margin:auto;
+}
+
+.place-order-heading
+{
+    font-size: 2.8rem;
+}
+
+
+.form
+{
+    background-color: rgb(0, 106, 57);
+  width:100%;
+    margin-top:5rem;
+    border-radius: 10px;
+    padding:2rem;
+}
+
+.header-heading-pre-orders
+{
+    padding-top:4rem;
+}
+
+.inside-header
+{
+    padding-top: 8rem;
+}
+.jumb-contact-heading, .jumb-heading-prev-orders
+{
+    font-size:2rem;
+}
+
+}
+
+
